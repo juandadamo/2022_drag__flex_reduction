@@ -15,4 +15,15 @@ Si hiciera falta, el comando:
 
     git ls-files | xargs -I{} bash -c 'touch "{}" --date=@$(git log -n1 --pretty=format:%ct -- "{}")'
     
-recupera los tiempos correspondientes de creaci
+recupera los tiempos correspondientes de creación.
+
+## Figuras
+
+Se generan figuras de la media temporal de $C_D$ de la figura de referencia "Dshape_ref_tape" en función del número de Reynolds.
+
+Y también figuras de $C:D$ para cada uno de los 3 espesores de Mylar ensayados.
+
+## Datos del perfil de velocidades en el túnel de vientos.
+
+Relevamos para una serie de alturas el perfil de velocidades y se ilustra en analisis_flapflex.ipynb
+
