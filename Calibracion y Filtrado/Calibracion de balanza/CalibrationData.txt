@@ -1,0 +1,1 @@
+txt,Media Lift,Media Drag,STD Lift,STD Drag
