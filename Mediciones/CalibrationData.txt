@@ -1,0 +1,23 @@
+txt,Media_Lift,Media_Drag,STD Lift,STD Drag
+Cuarentena\V25.00.txt,13,-20,4,0
+Cuarentena\V26.01.txt,13,-18,3,0
+Cuarentena\V28.00.txt,14,-17,2,0
+Cuarentena\V30.txt,15,-15,2,0
+Cuarentena\V32.00.txt,16,-14,2,0
+Cuarentena\V34.00.txt,17,-11,4,0
+Cuarentena\V36.00.txt,18,-10,2,1
+Cuarentena\V38.00.txt,20,-8,2,1
+Cuarentena\V40.00.txt,21,-6,7,2
+Cuarentena\V40.000.txt,20,-6,12,2
+Cuarentena\V42.00.txt,21,-4,16,2
+Cuarentena\V25.00.txt,13,-20,4,0
+Cuarentena\V26.01.txt,13,-17,3,16
+Cuarentena\V28.00.txt,14,-17,2,0
+Cuarentena\V30.txt,14,-12,18,47
+Cuarentena\V32.00.txt,15,-11,14,42
+Cuarentena\V34.00.txt,17,-11,4,0
+Cuarentena\V36.00.txt,18,-10,2,1
+Cuarentena\V38.00.txt,19,-7,9,24
+Cuarentena\V40.00.txt,21,-5,7,24
+Cuarentena\V40.000.txt,20,-6,12,2
+Cuarentena\V42.00.txt,21,-1,21,48
