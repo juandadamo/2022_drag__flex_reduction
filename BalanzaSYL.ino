@@ -9,9 +9,11 @@ const int LOADCELL_DOUT_PIN_L = 6;  //Can be another pin
 const int LOADCELL_SCK_PIN_L = 7;  //Can be another pin
 const int RATE = 8;
 
-HX711 scale;
+HX711 scaleD ;
+HX711 scaleL ;
 
 long reading;
+long readingL;
 unsigned long previousMillis = 0;
 int counter = 0;
 int sampleTime = 0;
@@ -20,8 +22,10 @@ bool rate = 0;
 
 void setup() {
   Serial.begin(115200);
-  scale.begin(LOADCELL_DOUT_PIN, LOADCELL_SCK_PIN);   // (Dout PIN, SCK PIN, gain) Channel A 128 or 64, Channel B 32.
-  //Set up PWM on pin 3 
+  scaleD.begin(LOADCELL_DOUT_PIN, LOADCELL_SCK_PIN);   // (Dout PIN, SCK PIN, gain) Channel A 128 or 64, Channel B 32.
+  scaleL.begin(LOADCELL_DOUT_PIN_L, LOADCELL_SCK_PIN_L);   // (Dout PIN, SCK PIN, gain) Channel A 128 or 64, Channel B 32.
+
+  //Set up PWM on pin 2 & 3 
   TCCR2A = bit(COM2A1) | bit(COM2B1) | bit(WGM21) | bit(WGM20);
   TCCR2B = bit(WGM22) | bit(CS20);
   OCR2A = 14;  //Con estos dos valores se juega para variar frecuencia 
@@ -33,8 +37,10 @@ void setup() {
 }
 
 void loop() {
-  if (scale.is_ready()) {
-    reading = scale.read();
+  if (scaleD.is_ready()) {
+    reading = scaleD.read();
+    readingL = scaleL.read();
+    
     counter ++;
   }
   if (counter == 1) { // average over 10 samples can be changed for high or low sample rates but change value 4 lines below from 10000.0
@@ -48,7 +54,9 @@ void loop() {
     Serial.print (",");
     Serial.print(samplePerSec);
     Serial.print (",");
-    Serial.println(reading);
+    Serial.print(reading);
+    Serial.print (",");
+    Serial.println(readingL);
     digitalWrite(RATE, rate);
   }
   if (Serial.available() > 0) { //receive rate from serial
